@@ -1,0 +1,107 @@
+/* ===================================================
+   CONTACT PAGE CUSTOM STYLES
+   =================================================== */
+
+/* 入力エリアのカード */
+.contact-card {
+  border: none;
+  background: #ffffff;
+  /* わずかに浮かび上がらせる */
+  transition: transform 0.4s ease;
+}
+
+/* フォームのラベル */
+.form-label {
+  color: var(--text-dark);
+  letter-spacing: 0.5px;
+  margin-bottom: 0.8rem;
+}
+
+/* 入力フィールドのカスタマイズ (Bootstrap臭さを消す) */
+.custom-input {
+  border: 2px solid #f1f3f5;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 15px 20px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* フォーカス時の挙動（青い枠線ではなく、柔らかい影と色） */
+.custom-input:focus {
+  background-color: #fff;
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 20px rgba(0, 119, 255, 0.08);
+  outline: none;
+}
+
+/* プレースホルダの色を薄く */
+.custom-input::placeholder {
+  color: #adb5bd;
+  font-size: 0.9rem;
+}
+
+/* エラー時の挙動（バリデーション） */
+.was-validated .custom-input:invalid {
+  border-color: #ff7675;
+  background-image: none; /* 標準のアイコンを消す */
+}
+
+.was-validated .custom-input:valid {
+  border-color: var(--accent-color);
+  background-image: none;
+}
+
+/* 送信ボタンの独自デザイン */
+.contact-submit-btn {
+  position: relative;
+  background: var(--text-dark);
+  color: #fff;
+  border: none;
+  padding: 18px 60px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 2px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 1;
+}
+
+.contact-submit-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--primary-gradient);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: -1;
+}
+
+.contact-submit-btn:hover {
+  color: #fff;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 119, 255, 0.2);
+}
+
+.contact-submit-btn:hover::before {
+  width: 100%;
+}
+
+.contact-submit-btn:active {
+  transform: translateY(-2px) scale(1);
+}
+
+/* --- レスポンシブ --- */
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 30px 20px !important;
+  }
+  
+  .contact-submit-btn {
+    width: 100%; /* スマホではボタンを横いっぱいに */
+    padding: 18px 0;
+  }
+}

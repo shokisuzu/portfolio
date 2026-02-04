@@ -1,235 +1,141 @@
-/* =========================
-   HERO
-========================= */
+/* ===================================================
+   INDEX PAGE CUSTOM STYLES
+   =================================================== */
+
+/* --- HERO SECTION --- */
 .hero {
-  height: 90vh;
-  background: linear-gradient(135deg, #0077ff, #00c6ff);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  text-align: center;
-}
-
-.hero h2 {
-  font-size: 3rem;
-  margin: 0;
-}
-
-.hero .accent {
-  color: #ffdd57;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-top: 10px;
-}
-
-/* =========================
-   アニメーション
-========================= */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1.5s ease forwards;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.typing {
-  overflow: hidden;
-  border-right: 3px solid #ffdd57;
-  white-space: nowrap;
-  width: 0;
-  animation: typing 3s steps(20, end) forwards,
-             blink 0.8s step-end infinite;
-}
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blink {
-  50% { border-color: transparent; }
-}
-
-/* スクロール拡大 */
-.scrollScale.ready {
-  transform: scale(0.9);
-  opacity: 0;
-  transition: all 0.6s ease;
-}
-
-.scrollScale.ready.active {
-  transform: scale(1);
-  opacity: 1;
-}
-
-/* =========================
-   ABOUT
-========================= */
-.about {
-  padding: 80px 20px;
-  background: #fff;
-}
-
-.about-inner {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  gap: 30px;
+  height: 80vh;
+  background: var(--primary-gradient);
+  /* 下部を斜めにカットしてモダンな印象に */
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  margin-bottom: 60px;
   position: relative;
 }
 
-.about-label {
-  writing-mode: vertical-rl;
-  background: #7fffd4;
-  padding: 10px 8px;
-  font-weight: bold;
+.hero-content {
+  z-index: 2;
 }
 
-.about-image img {
-  width: 180px;
+/* タイトルのマーカー風装飾 */
+.accent-text {
+  position: relative;
+  z-index: 1;
+  padding: 0 10px;
 }
 
-.about-content {
-  max-width: 500px;
-  line-height: 1.8;
-  font-size: 0.95rem;
-}
-
-.name-box {
-  background: #4fd1c5;
-  padding: 8px 12px;
-  margin-bottom: 15px;
-  font-weight: bold;
-}
-
-/* =========================
-   QUALIFICATION
-========================= */
-.qualification {
-  padding: 60px 20px;
-}
-
-.qualification-title {
-  background: #ddd;
-  display: inline-block;
-  padding: 6px 14px;
-  margin-bottom: 20px;
-}
-
-.qualification-box {
-  max-width: 500px;
-  border: 2px solid #333;
-  padding: 20px;
-  line-height: 1.8;
-}
-
-/* =========================
-   SKILLS
-========================= */
-.skills {
-  background: #fff;
-  padding: 70px 20px;
-}
-
-.skills-title {
-  background: #00c6d6;
-  padding: 6px 16px;
-  display: inline-block;
-  margin-bottom: 20px;
-}
-
-.skills-box {
-  background: #cfe1ff;
-  padding: 30px 40px;
-  max-width: 600px;
-}
-
-.skills-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.skills-list li {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 14px;
-  font-size: 1.1rem;
-}
-
-.stars {
-  color: #ffcc00;
-  letter-spacing: 3px;
-}
-
-/* =========================
-   WORKS
-========================= */
-.works {
-  background: #fff;
-  padding: 70px 20px;
-}
-
-.section-title {
-  background: #00c6a7;
-  color: #fff;
-  display: inline-block;
-  padding: 6px 14px;
-}
-
-.works-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
-}
-
-.work-card {
-  border: 1px solid #aaa;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-/* 画像枠 */
-.work-image {
+.accent-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 10px;
   width: 100%;
-  height: 220px;
-  overflow: hidden;
-  margin-bottom: 15px;
+  height: 15px;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: -1;
 }
 
-.work-image img {
+/* --- WORKS SECTION (画像の大きさ統一・バグ修正) --- */
+
+/* カード全体のコンテナ */
+.work-box {
+  background-color: #000;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  border: none;
+}
+
+/* 画像のアスペクト比を16:9に強制固定 */
+.work-img-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* これですべてのカードの高さが揃います */
+  overflow: hidden;
+}
+
+/* 画像の切り取り設定 */
+.work-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: block;
+  object-fit: cover; /* 枠いっぱいに広げ、はみ出しをカット */
+  object-position: center; /* 中央を基準にトリミング */
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 0.8;
 }
 
-.work-card h3 {
-  font-size: 1.3rem;
-  margin: 10px 0 8px;
+/* ホバー時の画像演出 */
+.work-box:hover .work-img {
+  transform: scale(1.1);
+  opacity: 0.6;
 }
 
-.work-card p {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  flex-grow: 1;
+/* 黒いグラデーションマスク */
+.work-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+  z-index: 2;
+  pointer-events: none; /* 下のリンクをクリック可能にする */
 }
 
-.work-card .next {
-  text-align: right;
-  font-weight: bold;
-  text-decoration: underline;
-  cursor: pointer;
+/* NEXTラベル */
+.next-label {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #fff;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 3px;
+  transition: all 0.4s ease;
+}
+
+/* ホバー時のNEXTラベル変化 */
+.work-box:hover .next-label {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+  padding-right: 15px;
+}
+
+/* 全体リンクの重なり順 */
+.stretched-link {
+  z-index: 10;
+}
+
+/* --- SKILLS & PROFILE --- */
+.profile-image-wrapper {
+  transition: var(--transition-smooth);
+}
+
+.profile-image-wrapper:hover {
+  transform: rotate(5deg) scale(1.05);
+}
+
+.custom-card {
+  border: 1px solid rgba(0,0,0,0.05) !important;
+}
+
+.progress-bar {
+  background: var(--primary-gradient);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 991px) {
+  .hero {
+    height: 60vh;
+    clip-path: none; /* スマホではシンプルに */
+  }
+  
+  .display-1 {
+    font-size: 3.2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  /* スマホでは16:9だと画像が小さすぎる場合、少し縦長にする調整 */
+  .work-img-wrapper {
+    aspect-ratio: 4 / 3; 
+  }
 }
