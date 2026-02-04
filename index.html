@@ -3,149 +3,175 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Home</title>
+  <title>Suzuki Kisho | Portfolio</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-  <!-- 共通CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="css/style.css">
-
-  <!-- index専用CSS -->
   <link rel="stylesheet" href="css/index.css">
 </head>
-
 <body>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <h2 class="typing">
-      Hello, I’m <span class="accent">suzuki kisho</span>
-    </h2>
-    <p class="fade-in">suzuki / Portfolio</p>
-  </section>
+  <button class="menu-btn border-0 shadow" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
+    MENU
+  </button>
 
-  <!-- ===== MENU BUTTON ===== -->
-  <div class="menu-btn" id="menuBtn">MENU</div>
-
-  <!-- ===== SIDE MENU ===== -->
-  <nav class="side-menu" id="sideMenu">
-    <ul class="menu-list">
-      <li><a href="index.html">ホーム</a></li>
-      <li><a href="about.html">私について</a></li>
-      <li><a href="works.html">制作したもの</a></li>
-      <li><a href="contact.html">お問い合わせ</a></li>
-    </ul>
-    <img src="img/saido.png" alt="Profile" class="menu-image">
-  </nav>
-
-  <!-- overlay -->
-  <div class="overlay" id="overlay"></div>
-
-  <!-- ===== ABOUT ===== -->
-  <section class="about scrollAnim scrollScale">
-    <div class="about-inner">
-
-      <div class="about-label">私について</div>
-
-      <div class="about-image">
-        <img src="img/main.png" alt="プロフィール">
+  <div class="offcanvas offcanvas-end border-0" tabindex="-1" id="offcanvasMenu">
+    <div class="offcanvas-header p-4"></div>
+    <div class="offcanvas-body d-flex flex-column justify-content-center">
+      <nav class="menu-list text-start ps-5">
+        <div class="mb-4"><a class="nav-link fw-bold display-6" href="index.html">ホーム</a></div>
+        <div class="mb-4"><a class="nav-link fw-bold display-6" href="about.html">私について</a></div>
+        <div class="mb-4"><a class="nav-link fw-bold display-6" href="works.html">制作したもの</a></div>
+        <div class="mb-5"><a class="nav-link fw-bold display-6" href="contact.html">お問い合わせ</a></div>
+      </nav>
+      <div class="menu-image-container text-end pe-4 mt-auto mb-5">
+        <img src="img/saido.png" alt="Profile Illustration" class="menu-image img-fluid w-50 opacity-75">
       </div>
+    </div>
+  </div>
 
-      <div class="about-content">
-        <div class="name-box">
-          名前：SUZUKI KISHO（スズキ キショウ）
+  <header class="hero d-flex justify-content-center align-items-center">
+    <div class="hero-content text-center text-white scrollAnim">
+      <p class="mb-2 fs-5 opacity-75">Welcome to my portfolio</p>
+      <h1 class="display-1 fw-bold mb-3">Hello, I’m <br><span class="accent-text">suzuki kisho</span></h1>
+      <div class="h-line mx-auto" style="width: 60px; height: 3px; background: #fff;"></div>
+      <p class="mt-4 lead fw-light">System Engineer Student / Runner / Movie Lover</p>
+    </div>
+  </header>
+
+  <main class="container my-5 py-5">
+    
+    <section class="row align-items-center mb-5 pb-5 scrollAnim">
+      <div class="col-lg-5 text-center mb-4 mb-lg-0">
+        <div class="profile-image-wrapper p-2 bg-white shadow-lg rounded-circle d-inline-block">
+          <img src="img/main.png" alt="Suzuki Kisho" class="rounded-circle img-fluid" 
+               style="width: 280px; height: 280px; object-fit: cover; object-position: top;">
         </div>
-        <p>平成17年12月13日生まれ　岩手県盛岡市出身</p>
-        <p>
-          趣味は、マラソン・映画鑑賞・カラオケです。<br>
-          休日は一人でカラオケに行ったり、長距離を走ったり、
-          家で映画やアニメを見て過ごしています。
+      </div>
+      <div class="col-lg-7 px-lg-5">
+        <span class="badge rounded-pill bg-success px-3 py-2 mb-3">私について</span>
+        <h2 class="fw-bold display-6 mb-3">SUZUKI KISHO <br><small class="text-muted fs-5">（スズキ キショウ）</small></h2>
+        <p class="lead text-secondary">「正確に動くこと」と「使いやすさ」を大切にする、岩手県出身の学生エンジニアです。</p>
+        <p class="text-muted">
+          目標に向かってコツコツと走り続ける忍耐力と、新しい技術を楽しむ好奇心を持って開発に取り組んでいます。
         </p>
+        <a href="about.html" class="btn btn-primary rounded-pill px-4 mt-3">詳しく知る →</a>
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <!-- ===== QUALIFICATION ===== -->
-  <section class="qualification scrollAnim scrollScale">
-    <h2 class="qualification-title">qualification</h2>
-
-    <div class="qualification-box">
-      <strong>保有資格・免許</strong><br><br>
-      ビジネス文書実務検定試験 2級<br>
-      簿記実務検定試験 3級<br>
-      情報処理検定試験 3級<br>
-      普通自動車第一種運転免許（AT限定）
-    </div>
-  </section>
-
-  <!-- ===== SKILLS ===== -->
-  <section class="skills scrollAnim scrollScale">
-    <h2 class="skills-title">My Skill</h2>
-
-    <div class="skills-box">
-      <ul class="skills-list">
-        <li><span>Python</span><span class="stars">★★★★★</span></li>
-        <li><span>HTML / CSS</span><span class="stars">★★★★☆</span></li>
-        <li><span>JavaScript</span><span class="stars">★★★★☆</span></li>
-        <li><span>C#</span><span class="stars">★★★☆☆</span></li>
-        <li><span>PHP</span><span class="stars">★★★☆☆</span></li>
-        <li><span>MySQL</span><span class="stars">★★★★☆</span></li>
-        <li><span>SQLite</span><span class="stars">★★★★☆</span></li>
-        <li><span>React（学習中）</span><span class="stars">★★★☆☆</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ===== WORKS ===== -->
-  <section class="works scrollAnim scrollScale">
-    <h2 class="section-title">制作したもの</h2>
-
-    <div class="works-grid">
-
-      <div class="work-card">
-        <div class="work-image">
-          <img src="img/yoyaku.png" alt="ホテル予約管理アプリ">
+    <section class="row g-4 mb-5 pb-5">
+      <div class="col-md-6 scrollAnim">
+        <div class="custom-card p-5 h-100 shadow-sm border-0 rounded-4">
+          <h3 class="fw-bold mb-4 border-bottom pb-2">Qualification</h3>
+          <ul class="list-unstyled fs-5">
+            <li class="mb-3">📄 ビジネス文書実務検定 2級</li>
+            <li class="mb-3">📄 簿記実務検定 3級</li>
+            <li class="mb-3">📄 情報処理検定 3級</li>
+            <li class="mb-0">🚗 普通自動車免許 (AT限定)</li>
+          </ul>
         </div>
-        <h3>ホテル予約管理アプリ</h3>
-        <p>ホテル用の予約管理システムをチームで開発しました。</p>
-        <span class="next">NEXT</span>
       </div>
-
-      <div class="work-card">
-        <div class="work-image">
-          <img src="img/po-to.png" alt="ポートフォリオ">
+      
+      <div class="col-md-6 scrollAnim" style="transition-delay: 0.2s;">
+        <div class="custom-card p-5 h-100 shadow-sm border-0 rounded-4">
+          <h3 class="fw-bold mb-4 border-bottom pb-2">My Skills</h3>
+          <div class="mb-4">
+            <div class="d-flex justify-content-between mb-1 fw-bold"><span>Python</span><span class="text-warning">★★★★★</span></div>
+            <div class="progress rounded-pill" style="height: 6px;"><div class="progress-bar bg-primary" style="width: 100%"></div></div>
+          </div>
+          <div class="mb-4">
+            <div class="d-flex justify-content-between mb-1 fw-bold"><span>Java / JavaFX</span><span class="text-warning">★★★★☆</span></div>
+            <div class="progress rounded-pill" style="height: 6px;"><div class="progress-bar bg-info" style="width: 80%"></div></div>
+          </div>
+          <div class="mb-4">
+            <div class="d-flex justify-content-between mb-1 fw-bold"><span>HTML / CSS / JS</span><span class="text-warning">★★★★☆</span></div>
+            <div class="progress rounded-pill" style="height: 6px;"><div class="progress-bar bg-success" style="width: 85%"></div></div>
+          </div>
+          <div class="mb-0">
+            <div class="d-flex justify-content-between mb-1 fw-bold"><span>MySQL / SQL</span><span class="text-warning">★★★☆☆</span></div>
+            <div class="progress rounded-pill" style="height: 6px;"><div class="progress-bar bg-warning" style="width: 70%"></div></div>
+          </div>
         </div>
-        <h3>ポートフォリオ</h3>
-        <p>私自身を紹介したポートフォリオです。</p>
-        <span class="next">NEXT</span>
+      </div>
+    </section>
+
+    <section class="works-preview py-5">
+      <div class="text-center mb-5 scrollAnim">
+        <span class="badge bg-success px-4 py-2 fs-6 mb-2">制作したもの</span>
+        <h2 class="fw-bold display-5">Selected Works</h2>
       </div>
 
-      <div class="work-card">
-        <div class="work-image">
-          <img src="img/ribase.png" alt="リバーシ">
+      <div class="row g-4">
+        <div class="col-md-6 scrollAnim">
+          <div class="work-box position-relative overflow-hidden rounded-4 shadow">
+            <div class="work-img-wrapper">
+              <img src="img/yoyaku.png" class="work-img" alt="Hotel App">
+            </div>
+            <a href="works.html" class="stretched-link"></a>
+            <div class="work-mask p-4 d-flex flex-column justify-content-end text-white">
+              <h4 class="fw-bold">ホテル予約管理アプリ</h4>
+              <p class="small opacity-75 mb-0">Python / Team Dev</p>
+              <div class="text-end mt-2"><span class="next-label">NEXT</span></div>
+            </div>
+          </div>
         </div>
-        <h3>リバーシ</h3>
-        <p>対戦型ボードゲームのリバーシをチームで開発しました。</p>
-        <span class="next">NEXT</span>
-      </div>
 
+        <div class="col-md-6 scrollAnim" style="transition-delay: 0.1s;">
+          <div class="work-box position-relative overflow-hidden rounded-4 shadow">
+            <div class="work-img-wrapper">
+              <img src="img/po-to.png" class="work-img" alt="Portfolio Site">
+            </div>
+            <a href="works.html" class="stretched-link"></a>
+            <div class="work-mask p-4 d-flex flex-column justify-content-end text-white">
+              <h4 class="fw-bold">ポートフォリオ</h4>
+              <p class="small opacity-75 mb-0">HTML / CSS / JS</p>
+              <div class="text-end mt-2"><span class="next-label">NEXT</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 scrollAnim" style="transition-delay: 0.2s;">
+          <div class="work-box position-relative overflow-hidden rounded-4 shadow">
+            <div class="work-img-wrapper">
+              <img src="img/ribase.png" class="work-img" alt="Reversi">
+            </div>
+            <a href="works.html" class="stretched-link"></a>
+            <div class="work-mask p-4 d-flex flex-column justify-content-end text-white">
+              <h4 class="fw-bold">リバーシ</h4>
+              <p class="small opacity-75 mb-0">Python / Socket / Network Dev</p>
+              <div class="text-end mt-2"><span class="next-label">NEXT</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 scrollAnim" style="transition-delay: 0.3s;">
+          <div class="work-box position-relative overflow-hidden rounded-4 shadow">
+            <div class="work-img-wrapper">
+              <img src="img/java.png" class="work-img" alt="JavaFX App">
+            </div>
+            <a href="works.html" class="stretched-link"></a>
+            <div class="work-mask p-4 d-flex flex-column justify-content-end text-white">
+              <h4 class="fw-bold">Training Master Pro</h4>
+              <p class="small opacity-75 mb-0">Java / JavaFX / Desktop App</p>
+              <div class="text-end mt-2"><span class="next-label">NEXT</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-dark text-white py-5 mt-5">
+    <div class="container text-center">
+      <h4 class="mb-4 fw-bold">k.suzuki.sys24@moriyobu.ac.jp</h4>
+      <small class="opacity-50">© 2026 鈴木規祥 All Rights Reserved.</small>
     </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <p>お問い合わせ</p>
-    <p>k.suzuki.sys24@moriyobu.ac.jp</p>
-    <small>© 2025 鈴木規祥 All Rights Reserved.</small>
   </footer>
 
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-  <!-- 共通JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="javascript/script.js"></script>
-
 </body>
 </html>
